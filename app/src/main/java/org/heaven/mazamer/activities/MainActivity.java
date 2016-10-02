@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView parent, View v, int position, long id) {
                 //Toast.makeText(getApplicationContext(),((TextView) v).getText(), Toast.LENGTH_SHORT).show();
                 psalmNumber ="" +((TextView) v).getText();
-                PsalmViewActivity_.intent(v.getContext()).psalmNumber(psalmNumber).start();
+                org.heaven.mazamer.activities.PsalmViewActivity_.intent(v.getContext()).psalmNumber(psalmNumber).start();
             }
         });
     }

@@ -1,5 +1,6 @@
 package org.heaven.mazamer.activities;
 
+import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -15,15 +16,16 @@ public class PsalmViewActivity extends AppCompatActivity {
 
     @ViewById(R.id.psalmTextView)
     protected TextView psalmTextView;
+    @ViewById(R.id.psalmTextViewHead)
+    protected TextView psalmTextViewHead;
 
     @Extra
     protected String psalmNumber;
 
     @AfterViews
     public void initView() {
-        Toast.makeText(this,psalmNumber, Toast.LENGTH_SHORT).show();
-
-        psalmTextView.setText(R.string.psalm1);
+        psalmTextViewHead.setText("المزمور "+psalmNumber);
+        psalmTextView.setText(getResources().getString(getResources().getIdentifier(("psalm"+psalmNumber), "string", getPackageName())));
     }
 
 }
